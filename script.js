@@ -55,7 +55,9 @@ function playRound(humanChoice, computerChoice){
                 humanScore++;
         }
     }
-    console.log("Enter a valid choice");
+    else {
+        console.log("Enter a valid choice");
+    }
 }
 
 function playGame(){
@@ -68,4 +70,6 @@ function playGame(){
     else{
         alert(`You lose! your score:${humanScore}, computer score:${computerScore}`)
     } 
+    humanScore = 0;
+    computerScore = 0;
 }
