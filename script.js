@@ -58,6 +58,11 @@ function playRound(humanChoice, computerChoice){
     else {
         console.log("Enter a valid choice");
     }
+    let hScore = document.querySelector("#human-score");
+    let cScore = document.querySelector("#computer-score");
+
+    hScore.textContent = `You score: ${humanScore}`;
+    cScore.textContent = `Computer Score: ${computerScore}`;
 }
 
 function playGame(){
