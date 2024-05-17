@@ -68,22 +68,8 @@ function playRound(humanChoice, computerChoice){
     let hScore = document.querySelector("#human-score");
     let cScore = document.querySelector("#computer-score");
 
-    hScore.textContent = `You score: ${humanScore}`;
+    hScore.textContent = `Your score: ${humanScore}`;
     cScore.textContent = `Computer Score: ${computerScore}`;
-}
-
-function playGame(){
-    for(i = 0; i<5; i++){
-        playRound(getHumanChoice(),getComputerChoice());
-    }
-    if(humanScore > computerScore){
-        alert(`You win! your score:${humanScore}, computer score:${computerScore}`)
-    }
-    else{
-        alert(`You lose! your score:${humanScore}, computer score:${computerScore}`)
-    } 
-    humanScore = 0;
-    computerScore = 0;
 }
 
 let choice = document.querySelector(".choice");
@@ -92,4 +78,14 @@ let result = document.querySelector("#result");
 choice.addEventListener("click", (e) => {
     let target = e.target;
     playRound(`${target.id}`,getComputerChoice());
+    if(humanScore == 5){
+        result.textContent = "You won against the computer!";
+        humanScore = 0;
+        computerScore = 0;
+    }
+    else if(computerScore == 5){
+        result.textContent = "The comptuer won!";
+        humanScore = 0;
+        computerScore = 0;
+    }
 });
