@@ -73,3 +73,23 @@ function playGame(){
     humanScore = 0;
     computerScore = 0;
 }
+
+let choice = document.querySelector("choice");
+
+choice.addEventListener("click", (e) => {
+    let target = e.target;
+
+    switch(target.id) {
+        case "rock" :
+            playRound(`${target.id}`,getComputerChoice());
+            break;
+
+        case "paper" :
+            playRound(`${target.id}`,getComputerChoice());
+            break;
+
+        case "scissors" :
+            playRound(`${target.id}`,getComputerChoice());
+            break;
+    }
+});
